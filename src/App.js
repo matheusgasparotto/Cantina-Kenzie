@@ -18,6 +18,7 @@ import { useHistory } from "react-router-dom";
 
 const App = () => {
   const productsURL = useHistory();
+  console.log(productsURL);
   const [collapsed, setColapsed] = useState(false);
 
   const toggleColapsed = () => {
@@ -33,7 +34,9 @@ const App = () => {
           )}
         </Button>
         <Menu
-          defaultSelectedKeys={productsURL === '/bests'? ["1"] : ["2"]}
+          defaultSelectedKeys={
+            productsURL.location.pathname === "/bests" ? ["2"] : ["1"]
+          }
           defaultOpenKeys={["sub1"]}
           mode="inline"
           theme="dark"
@@ -41,14 +44,13 @@ const App = () => {
         >
           <Menu.Item key="1" icon={<AppleOutlined />}>
             <Link to="/saudaveis">Saudáveis</Link>
-            {productsURL.push('bests')}
           </Menu.Item>
           <Menu.Item key="2" icon={<StarOutlined />}>
             <Link to="/bests">Melhores comidas</Link>
           </Menu.Item>
         </Menu>
       </div>
-      <Switch>
+      <Switch className='products'>
         <Product products={products} History={productsURL} />
       </Switch>
     </div>

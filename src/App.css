@@ -1,6 +1,6 @@
 .App {
   display: flex;
-  
+  justify-content: space-around;
 }
 
 .menu {
@@ -14,8 +14,11 @@
 }
 
 .ant-row{
-  width: 70%;
+  width: 60%;
+  margin:10px;
 }
+
+
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
