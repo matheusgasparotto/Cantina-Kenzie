@@ -33,17 +33,18 @@ const App = () => {
           )}
         </Button>
         <Menu
-          defaultSelectedKeys={["1"]}
+          defaultSelectedKeys={productsURL === '/bests'? ["1"] : ["2"]}
           defaultOpenKeys={["sub1"]}
           mode="inline"
           theme="dark"
           inlineCollapsed={collapsed}
         >
           <Menu.Item key="1" icon={<AppleOutlined />}>
-            <Link to="/bests">Saudáveis</Link>
+            <Link to="/saudaveis">Saudáveis</Link>
+            {productsURL.push('bests')}
           </Menu.Item>
           <Menu.Item key="2" icon={<StarOutlined />}>
-            <Link to="/saudaveis">Melhores comidas</Link>
+            <Link to="/bests">Melhores comidas</Link>
           </Menu.Item>
         </Menu>
       </div>

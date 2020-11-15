@@ -1,7 +1,7 @@
 export const products = {
   saudaveis: [
     {
-      name: "Hamburguer",
+      name: "Banana",
       price: "R$ 4,99",
       img:
         "https://static.carrefour.com.br/medias/sys_master/images/images/h3c/h4c/h00/h00/14506624385054.jpg",
@@ -51,7 +51,7 @@ export const products = {
   ],
   bests: [
     {
-      name: "Banana",
+      name: "Hamburguer",
       price: "R$ 4,99",
       img:
         "https://static.carrefour.com.br/medias/sys_master/images/images/h3c/h4c/h00/h00/14506624385054.jpg",
