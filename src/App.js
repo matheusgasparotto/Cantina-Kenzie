@@ -1,9 +1,8 @@
 import "./App.css";
 import React from "react";
-import { Route, Switch, Link } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { Switch, Link } from "react-router-dom";
+import { useState } from "react";
 import "antd/dist/antd.css";
-import ReactDOM from "react-dom";
 import { Menu, Button } from "antd";
 import {
   MenuFoldOutlined,
@@ -18,7 +17,6 @@ import { useHistory } from "react-router-dom";
 
 const App = () => {
   const productsURL = useHistory();
-  console.log(productsURL);
   const [collapsed, setColapsed] = useState(false);
 
   const toggleColapsed = () => {
@@ -50,7 +48,7 @@ const App = () => {
           </Menu.Item>
         </Menu>
       </div>
-      <Switch className='products'>
+      <Switch className="products">
         <Product products={products} History={productsURL} />
       </Switch>
     </div>
