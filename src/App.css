@@ -14,11 +14,14 @@
 }
 
 .ant-row{
-  width: 60%;
-  margin:10px;
+  width:100%;
+  
 }
 
-
+.products{
+  width: 70%;
+  margin:10px;
+}
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {

@@ -16,7 +16,7 @@ import Product from "./Pages/Product-page";
 import { useHistory } from "react-router-dom";
 
 const App = () => {
-  const productsURL = useHistory();
+  const productsURL = useHistory("/saudaveis");
   const [collapsed, setColapsed] = useState(false);
 
   const toggleColapsed = () => {
@@ -48,9 +48,11 @@ const App = () => {
           </Menu.Item>
         </Menu>
       </div>
-      <Switch className="products">
-        <Product products={products} History={productsURL} />
-      </Switch>
+      <div className='products'>
+        <Switch>
+          <Product products={products} History={productsURL} />
+        </Switch>
+      </div>
     </div>
   );
 };
