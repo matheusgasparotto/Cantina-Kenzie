@@ -8,15 +8,16 @@ const ProductPage = ({ products }) => {
   const productKeys = Object.keys(products);
 
   const productButtons = (key) => {
-    return (
+    const productsArr = products[key];
+    return productsArr.map((product) => (
       <Col span={5}>
-        <ProductButton product={products[key]} />
+        <ProductButton product={product} />
       </Col>
-    );
+    ));
   };
 
   return productKeys.map((key) => (
-    <Route>
+    <Route exact path={`/${key}`}>
       <Row justify="space-between" gutter={24}>
         {productButtons(key)}
       </Row>

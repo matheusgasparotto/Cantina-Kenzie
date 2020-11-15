@@ -40,10 +40,10 @@ const App = () => {
           inlineCollapsed={collapsed}
         >
           <Menu.Item key="1" icon={<AppleOutlined />}>
-            <Link to="/fruits">Saudáveis</Link>
+            <Link to="/bests">Saudáveis</Link>
           </Menu.Item>
           <Menu.Item key="2" icon={<StarOutlined />}>
-            <Link to="/">Melhores comidas</Link>
+            <Link to="/saudaveis">Melhores comidas</Link>
           </Menu.Item>
         </Menu>
       </div>
