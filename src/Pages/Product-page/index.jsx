@@ -4,7 +4,7 @@ import { Route } from "react-router-dom";
 
 import ProductButton from "../../Components/ProductButton";
 
-const ProductPage = ({ products, History }) => {
+const ProductPage = ({ products }) => {
   const productKeys = Object.keys(products);
 
   const productButtons = (key) => {

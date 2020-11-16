@@ -13,15 +13,16 @@ import {
 
 import { products } from "./data/fruits/fruits";
 import Product from "./Pages/Product-page";
-import { useHistory } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 const App = () => {
-  const productsURL = useHistory("/saudaveis");
   const [collapsed, setColapsed] = useState(false);
 
   const toggleColapsed = () => {
     setColapsed(!collapsed);
   };
+
+  const location = useLocation();
 
   return (
     <div className="App">
@@ -32,25 +33,23 @@ const App = () => {
           )}
         </Button>
         <Menu
-          defaultSelectedKeys={
-            productsURL.location.pathname === "/bests" ? ["2"] : ["1"]
-          }
-          defaultOpenKeys={["sub1"]}
+          defaultSelectedKeys={["/saudaveis"]}
+          selectedKeys={[location.pathname]}
           mode="inline"
           theme="dark"
           inlineCollapsed={collapsed}
         >
-          <Menu.Item key="1" icon={<AppleOutlined />}>
+          <Menu.Item key="/saudaveis" icon={<AppleOutlined />}>
             <Link to="/saudaveis">Saudáveis</Link>
           </Menu.Item>
-          <Menu.Item key="2" icon={<StarOutlined />}>
+          <Menu.Item key="/bests" icon={<StarOutlined />}>
             <Link to="/bests">Melhores comidas</Link>
           </Menu.Item>
         </Menu>
       </div>
-      <div className='products'>
+      <div className="products">
         <Switch>
-          <Product products={products} History={productsURL} />
+          <Product products={products} History={location} />
         </Switch>
       </div>
     </div>
